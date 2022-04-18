@@ -18,6 +18,8 @@ let dataArr = [];
 let title = [];
 
 const searchCinema = async function (a) {
+  cinemaCard.innerHTML = "";
+  dataArr = [];
   console.log("s");
   const data = await fetch(`https://www.omdbapi.com/?apikey=1fd18c03&s=${a}`);
   const dataJSON = await data.json();
@@ -30,6 +32,7 @@ const searchCinema = async function (a) {
 
   dataArr[0].forEach((val) => {
     renderHtml(val);
+
     console.log(val);
     console.log(val.Title);
     console.log(val.Poster);
